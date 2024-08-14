@@ -1,38 +1,36 @@
 <html lang="en">
-
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
     </head>
-
-        <h1>My Updated External Page</h1>
+    <body>
+        <h1>My Newly Updated External Page</h1>
         <div id="lightning-out"></div>
-
-    <script> src="https://rhinoafrica--radevt.sandbox.my.site.com/lightning/lightning.out.js"</script>
-    <script>
-    
-    const appName = 'c:ToastLightningApp';
-    const componentName = 'c:toast';
-    const lightningEndpoint = 'https://rhinoafrica--radevt.sandbox.my.site.com';
-    const targetElement = 'lightning-out';
-    const componentAttributes = {
-    
-    };
-    
-    $Lightning.use(
-        appName,
-        function (){
-          $Lightning.createComponent(
-                  componentName,
-                  componentAttributes,
-                  targetElement,
-                  function (cmp){
-                    console.log('lightning component created');
-                  }
-          );
-        },
-        lightningEndpoint
-    );    
-</script>
-    
+        
+        <script src="https://rhinoafrica--radevt.sandbox.my.site.com/lightning/lightning.out.js"></script>
+        <script>
+            window.onload = function() {
+                const appName = 'c:ToastLightningApp';
+                const componentName = 'c:toast';
+                const lightningEndpoint = 'https://rhinoafrica--radevt.sandbox.my.site.com';
+                const targetElement = 'lightning-out';
+                const componentAttributes = {};
+                
+                $Lightning.use(
+                    appName,
+                    function (){
+                        $Lightning.createComponent(
+                            componentName,
+                            componentAttributes,
+                            targetElement,
+                            function (cmp){
+                                console.log('lightning component created');
+                            }
+                        );
+                    },
+                    lightningEndpoint
+                );
+            };
+        </script>
+    </body>
 </html>
