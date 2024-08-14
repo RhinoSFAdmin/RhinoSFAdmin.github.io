@@ -10,26 +10,19 @@
 
     <script> src = "https://rhinoafrica--radevt.sandbox.my.site.com/ligtning/lightning.out.js"
     <script>
-        const appName = 'c:ToastLightningApp';
-        const componentName = 'c:toast';
-        const lightningEndPoint = 'https://rhinoafrica--radevt.sandbox.my.site.com';
-        const targetElement = document.querySelector("lightning-out");
-        const componentAttributes = {
-        };
-
         $Lightning.use(
-            appName,
+            'c:ToastLightningApp',
             function () { 
                 $Lightning.createComponent(
-                    componentName,
-                    componentAttributes,
-                    targetElement,
+                    'c:toast',
+                    {},
+                    'lightning-out',
                     function (cmp) { 
                         console.log('The component was created.');
                     }
                 );
             },
-            lightningEndPoint
+            'https://rhinoafrica--radevt.sandbox.my.site.com'
         );
     </script>   
 </html>
