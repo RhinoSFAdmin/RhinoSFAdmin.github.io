@@ -4,28 +4,32 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
     </head>
-    <body>
+
         <h1>My External Page</h1>
         <div id="lightning-out"></div>
 
     <script> src = "https://rhinoafrica--radevt.sandbox.my.site.com/ligtning/lightning.out.js"</script>
     <script>
+        const appName = 'c:ToastLightningApp';
+        const componentName = 'c:toast';
+        const lightningEndPoint = 'https://rhinoafrica--radevt.sandbox.my.site.com';
+        const targetElement = document.querySelector("lightning-out");
+        const componentAttributes = {
+        };
+
         $Lightning.use(
-            'c:ToastLightningApp',
+            appName,
             function () { 
                 $Lightning.createComponent(
-                    'c:toast',
-                    {}, // attributes to set on the component
-                    'lightning-out', // DOM element ID where the component is inserted
-                    function (cmp) { // callback after the component loads
+                    componentName,
+                    componentAttributes,
+                    targetElement,
+                    function (cmp) { 
                         console.log('The component was created.');
                     }
                 );
             },
-            'https://rhinoafrica--radevt.sandbox.my.site.com' 
+            lightningEndPoint
         );
-    </script>
-    </body>
-
-    
+    </script>   
 </html>
